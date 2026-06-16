@@ -1,0 +1,723 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Offering Memorandum — 11025 Blix St, Toluca Lake</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --navy:#0D2245;
+    --navy-deep:#081a38;
+    --navy-soft:#1A3A6B;
+    --cream:#F5F6F8;
+    --cream-2:#EAECF1;
+    --accent:#E07B3A;
+    --accent-deep:#C5641E;
+    --ink:#1A1A2E;
+    --muted:#6B7280;
+    --rule:#DDE2EA;
+    --line:#DDE2EA;
+    --good:#1D6B44;
+    --bad:#b4502f;
+    --pageW:11in;
+    --pageH:8.5in;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;background:#52565c;}
+  body{font-family:'Inter',sans-serif;color:var(--ink);-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  .serif{font-family:'Playfair Display',serif;}
+
+  .toolbar{position:fixed;top:14px;right:14px;z-index:99;display:flex;gap:8px;}
+  .toolbar button{font-family:'Inter';font-size:12px;font-weight:600;letter-spacing:.04em;border:none;border-radius:6px;
+    background:var(--accent);color:#fff;padding:9px 14px;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.3);}
+  .toolbar button.alt{background:var(--navy);}
+  @media print{.toolbar{display:none;}}
+
+  .deck{display:flex;flex-direction:column;align-items:center;gap:26px;padding:34px 14px 60px;}
+  .page{width:var(--pageW);height:var(--pageH);background:var(--cream);position:relative;overflow:hidden;
+    box-shadow:0 10px 38px rgba(0,0,0,.4);}
+  .page-pad{position:absolute;inset:0;padding:0.5in 0.6in 0.4in;display:flex;flex-direction:column;}
+
+  .rh{display:flex;justify-content:space-between;align-items:flex-end;border-bottom:1.5px solid var(--rule);padding-bottom:8px;margin-bottom:15px;}
+  .rh .eyebrow{font-size:8.5px;letter-spacing:.32em;text-transform:uppercase;color:var(--accent-deep);font-weight:700;}
+  .rh .sect{font-family:'Playfair Display';font-size:19px;color:var(--navy);font-weight:600;margin-top:2px;}
+  .rh .tag{font-size:8.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);text-align:right;}
+  .rf{margin-top:12px;display:flex;justify-content:space-between;align-items:center;
+    border-top:1px solid var(--rule);padding-top:7px;font-size:8px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);}
+  .rf .pg{font-family:'Inter';color:var(--navy);font-weight:600;}
+  .logo{display:flex;align-items:center;gap:7px;font-family:'Playfair Display';font-weight:600;color:var(--navy);font-size:13px;letter-spacing:.02em;}
+  .logo .dia{width:10px;height:10px;background:var(--accent);transform:rotate(45deg);display:inline-block;}
+
+  h1,h2,h3{margin:0;}
+  .body{flex:1;min-height:0;overflow:hidden;}
+  p{line-height:1.5;}
+  .eyebrow{font-size:9px;letter-spacing:.3em;text-transform:uppercase;color:var(--accent-deep);font-weight:700;}
+  .lead{font-family:'Playfair Display';font-size:15px;line-height:1.5;color:var(--navy);font-weight:500;}
+
+  /* ---- COVER ---- */
+  .cover{background:var(--navy-deep);color:#fff;}
+  .cover .hero{position:absolute;inset:0;}
+  .cover .hero img{width:100%;height:100%;object-fit:cover;filter:saturate(.98) brightness(.92);}
+  .cover .grad{position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,28,48,.55) 0%,rgba(14,28,48,.2) 40%,rgba(14,28,48,.8) 100%);}
+  .cover .frame{position:absolute;inset:0.32in;border:1px solid rgba(255,255,255,.28);pointer-events:none;}
+  .cover-top{position:absolute;top:0.5in;left:0.7in;right:0.7in;display:flex;justify-content:space-between;align-items:center;}
+  .team-logo{height:46px;width:auto;display:block;filter:drop-shadow(0 1px 2px rgba(0,0,0,.62)) contrast(1.1) saturate(1.05);}
+  .cover-divider{height:2px;width:64px;background:var(--accent);}
+  .cover-footer{position:absolute;left:0;right:0;bottom:0;padding:64px 0.7in 0.5in;
+    background:linear-gradient(0deg,rgba(14,28,48,.92) 14%,rgba(14,28,48,0) 100%);}
+  .cover-footer .cover-divider{margin:0 0 14px 2px;}
+  .cover-footer .cf-title{font-family:'Playfair Display';font-size:52px;line-height:.97;font-weight:600;color:#fff;letter-spacing:-.01em;}
+  .cover-footer .cf-addr{margin-top:14px;font-size:13px;letter-spacing:.26em;text-transform:uppercase;color:rgba(255,255,255,.92);}
+  .cover-stats{display:flex;gap:46px;margin-top:24px;}
+  .cover-stats .s .v{font-family:'Playfair Display';font-size:21px;font-weight:600;color:#fff;}
+  .cover-stats .s .l{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.78);margin-top:5px;}
+
+  /* ---- spec card grid ---- */
+  .specgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:13px;}
+  .speccard{background:#fff;border:1px solid var(--line);border-radius:5px;padding:14px 16px;}
+  .speccard .l{font-size:8px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:600;}
+  .speccard .v{font-family:'Playfair Display';font-size:16px;font-weight:600;color:var(--navy);margin-top:7px;line-height:1.15;}
+
+  /* ---- 4-up photo page ---- */
+  .photos4{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:16px 18px;}
+  .photos4 figure{margin:0;display:flex;flex-direction:column;gap:8px;min-height:0;}
+  .photos4 .ph-img{flex:1;min-height:0;background:var(--navy-deep);border:1px solid var(--line);overflow:hidden;}
+  .photos4 .ph-img img{width:100%;height:100%;object-fit:cover;display:block;}
+  .photos4 figcaption{font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600;}
+
+  /* ---- tables ---- */
+  table{width:100%;border-collapse:collapse;font-size:10px;font-variant-numeric:tabular-nums;border:1px solid var(--line);}
+  thead th{background:var(--navy);color:#fff;font-weight:600;text-align:right;padding:7px 9px;font-size:9px;letter-spacing:.08em;text-transform:uppercase;border-bottom:2px solid var(--accent);}
+  thead th:first-child{text-align:left;}
+  tbody td{padding:6px 9px;text-align:right;border-bottom:1px solid var(--line);color:#2b323d;}
+  tbody td:first-child{text-align:left;font-weight:500;color:var(--ink);}
+  tbody tr:nth-child(even){background:rgba(22,39,63,.03);}
+  tbody tr:last-child td{border-bottom:none;}
+  tbody tr.sum td{background:var(--cream-2);font-weight:700;color:var(--navy);border-top:1.5px solid var(--navy);}
+  tbody tr.hl td{background:rgba(221,134,58,.11);}
+  .t-note{font-size:8px;color:var(--muted);margin-top:7px;font-style:italic;}
+  table.big{font-size:11.5px;}
+  table.big thead th{font-size:9.5px;padding:9px 11px;}
+  table.big tbody td{padding:8.5px 11px;}
+  table.big tbody tr:nth-child(odd){background:#fff;}
+  table.big tbody tr:nth-child(even){background:rgba(224,123,58,.12);}
+
+  /* ---- highlight cards ---- */
+  .hl-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px 16px;width:100%;}
+  .hl-card{background:#fff;border:1px solid var(--line);border-radius:6px;padding:15px 17px;display:flex;gap:13px;align-items:flex-start;}
+  .hl-card .chip{flex-shrink:0;width:26px;height:26px;border-radius:5px;background:var(--navy);color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+  .hl-card .tx b{display:block;font-size:11.5px;color:var(--navy);font-weight:700;margin-bottom:4px;}
+  .hl-card .tx span{font-size:10px;color:var(--muted);line-height:1.5;}
+
+  /* ---- TOC ---- */
+  .toc-row{display:flex;align-items:baseline;gap:14px;padding:9.5px 0;border-bottom:1px solid var(--line);}
+  .toc-row .num{font-family:'Inter';font-size:13px;color:var(--accent);font-weight:600;width:34px;}
+  .toc-row .ti{font-family:'Playfair Display';font-size:15px;color:var(--navy);font-weight:600;flex:1;}
+  .toc-row .dots{flex:1;border-bottom:1px dotted var(--rule);margin:0 8px 4px;}
+  .toc-row .pg{font-family:'Inter';font-size:11px;color:var(--muted);}
+
+  /* ---- Tirajeh-style components ---- */
+  .tcard-trio{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;}
+  .tcard-duo{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  .tcard{background:#fff;border:1px solid var(--line);border-radius:6px;padding:16px 18px;}
+  .tcard .ct{font-size:10px;font-weight:700;color:var(--navy);margin-bottom:7px;text-transform:uppercase;letter-spacing:.06em;}
+  .tcard p{font-size:10px;color:var(--muted);line-height:1.55;margin:0;}
+  .tcard p strong{color:var(--ink);font-weight:600;}
+  .tcard.dark{background:var(--navy);border-color:var(--navy);}
+  .tcard.dark .ct{color:var(--accent);}
+  .tcard.dark p{color:rgba(255,255,255,.7);}
+  .tcard.dark p strong{color:#fff;}
+  .tcard .big{font-family:'Playfair Display';font-weight:700;color:var(--navy);line-height:1;}
+  .map-box{border:1px solid var(--line);border-radius:6px;overflow:hidden;display:flex;flex-direction:column;background:#eef1f5;}
+  .map-box img{flex:1;min-height:0;width:100%;object-fit:cover;display:block;}
+  .map-box svg{flex:1;min-height:0;width:100%;display:block;}
+  .map-cap{background:var(--navy);padding:7px 13px;font-size:9px;color:rgba(255,255,255,.7);letter-spacing:.06em;text-transform:uppercase;}
+
+  /* ---- MMI financial summary (setup format) ---- */
+  .fsec{border:1px solid var(--line);border-radius:5px;overflow:hidden;background:#fff;}
+  .fbar{background:var(--navy);color:#fff;font-weight:700;font-family:'Inter',sans-serif;font-size:9.5px;letter-spacing:.09em;text-transform:uppercase;padding:7px 11px;display:grid;align-items:center;gap:8px;white-space:nowrap;border-bottom:2px solid var(--accent);}
+  .frow{padding:4.5px 11px;font-size:10.5px;font-family:'Inter',sans-serif;display:grid;align-items:center;gap:8px;}
+  .frows .frow:nth-child(even){background:#f6f7f9;}
+  .frow .l{color:var(--navy);}
+  .frow .v{text-align:right;font-variant-numeric:tabular-nums;color:var(--ink);}
+  .frow .v .pc{color:var(--muted);font-size:8.5px;}
+  .frow.t{font-weight:700;background:#eaedf2;border-top:1px solid var(--navy);}
+  .frow.t .l,.frow.t .v{color:var(--navy);}
+  .fnote{font-size:8.5px;color:var(--muted);font-style:italic;padding:6px 1px 0;}
+
+  /* ---- offering summary page ---- */
+  .osum-stat{background:#f4f5f7;border:1px solid var(--line);padding:13px 8px;text-align:center;border-radius:4px;}
+  .osum-stat .ic{color:var(--accent);font-size:22px;font-weight:700;line-height:1;}
+  .osum-stat .l{font-size:10.5px;color:var(--muted);margin-top:8px;}
+  .osum-stat .v{font-family:'Playfair Display';font-size:18px;font-weight:700;color:var(--navy);margin-top:4px;}
+  .osum-sec{font-size:11px;font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:.08em;border-bottom:2px solid var(--accent);padding-bottom:5px;margin:0 0 2px;}
+  .osum-row{display:flex;justify-content:space-between;font-size:10.5px;padding:5px 1px;border-bottom:1px solid #f0e2d5;}
+  .osum-row .l{color:var(--navy);}
+  .osum-row .v{color:var(--ink);font-variant-numeric:tabular-nums;}
+
+  .ret-row{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;}
+
+  .disc p{font-size:11px;line-height:1.65;color:#414854;margin:0 0 11px;}
+  .disc h3{font-family:'Playfair Display';font-size:14.5px;color:var(--navy);margin:13px 0 7px;}
+
+  /* listed-by box */
+  .listed-by{background:#fff;border:1px solid var(--line);border-top:3px solid var(--accent);padding:22px 24px;}
+  .listed-by .l{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent-deep);font-weight:700;margin-bottom:6px;}
+  .listed-by p{font-size:14px;line-height:1.62;margin:20px 0 0;color:var(--ink);}
+  .listed-by p b{display:block;color:var(--navy);font-size:14px;font-weight:700;margin-bottom:3px;}
+</style>
+</head>
+<body>
+<div class="toolbar">
+  <button onclick="window.print()">⤓ Print / Save PDF</button>
+  <button class="alt" onclick="document.documentElement.requestFullscreen&&document.documentElement.requestFullscreen()">⛶ Fullscreen</button>
+</div>
+<div class="deck">
+
+<!-- ============ 1 · COVER ============ -->
+<section class="page cover front">
+  <div class="hero"><img src="./assets/property_secondary.jpeg" alt="11025 Blix Street" /></div>
+  <div class="grad"></div>
+  <div class="frame"></div>
+  <div class="cover-top">
+    <img class="team-logo" src="./assets/laaa-team-white.png" alt="Marcus & Millichap — LAAA Team" />
+    <div style="font-family:'Inter';font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);align-self:flex-start;position:relative;top:-14px;">Multifamily Offering Memorandum</div>
+  </div>
+  <div class="cover-footer">
+    <div class="cover-divider"></div>
+    <h1 class="cf-title">11025 <span style="color:var(--accent);">Blix</span></h1>
+    <div class="cf-addr">11025 Blix Street · Toluca Lake · Los Angeles, CA 91602</div>
+  </div>
+</section>
+
+<!-- ============ 2 · CONFIDENTIALITY ============ -->
+<section class="page">
+  <div class="page-pad">
+    <div class="rh">
+      <div><div class="eyebrow">Confidentiality &amp; Disclaimer</div><div class="sect">Non-Endorsement &amp; Disclaimer Notice</div></div>
+      <div class="tag">11025 Blix St</div>
+    </div>
+    <div class="body disc" style="display:grid;grid-template-columns:0.74fr 1.26fr;gap:26px;">
+      <div style="display:flex;flex-direction:column;">
+        <div class="listed-by" style="flex:1;">
+          <div class="l">Exclusively Listed By</div>
+          <p><b>Filip Niculete</b>Senior Managing Director, Investments<br/>CA DRE #01905352<br/>(818) 212-2748<br/>Filip.Niculete@marcusmillichap.com</p>
+          <p><b>Glen Scher</b>Senior Managing Director, Investments<br/>CA DRE #01962976<br/>(818) 212-2808<br/>Glen.Scher@marcusmillichap.com</p>
+        </div>
+      </div>
+      <div>
+        <p>This Offering Memorandum has been prepared by Marcus &amp; Millichap (“Broker”) for use by a limited number of qualified parties evaluating a potential acquisition of the property located at 11023–11025 Blix Street, Los Angeles, CA 91602 (the “Property”). It contains selected information about the Property and does not purport to be all-inclusive or to contain all of the information a prospective purchaser may require.</p>
+        <p>The information contained herein has been obtained from sources believed to be reliable; however, Broker has not verified, and will not verify, any of the information contained herein, nor has Broker conducted any investigation regarding these matters. Broker makes no guarantee, warranty or representation, express or implied, as to the accuracy or completeness of the information provided. The Property is offered on an “as-is, where-is” basis.</p>
+        <p>The Property is newly constructed (2025) and has no established operating history; all income, expense, and return figures presented herein are benchmark-built underwriting estimates and are subject to material variation. All financial projections and operating assumptions are based on assumptions relating to the general economy, market conditions, competition, and other factors beyond Broker’s control.</p>
+        <h3>Non-Endorsement Notice</h3>
+        <p>Marcus &amp; Millichap is not affiliated with, sponsored by, or endorsed by any commercial tenant or lessee identified herein. The presence of any name or trade name is solely for identification purposes and is not intended to indicate any affiliation with, or sponsorship or endorsement by, Marcus &amp; Millichap.</p>
+        <p>Prospective purchasers should make their own independent investigation and rely solely upon such investigation, including verification of all rental income, lease terms, square footage, lot size, unit/bedroom/bathroom counts, permits, regulatory status, and operating expenses. By its 2025 vintage the Property is exempt from the City of Los Angeles Rent Stabilization Ordinance (RSO) and California AB 1482; buyers should independently confirm all applicable regulatory status, registration, and exemptions.</p>
+        <p>The rear accessory dwelling unit is leased effective July 2026, and certain units may remain subject to final Certificate of Occupancy. Buyer and buyer’s counsel should verify all permits, the Certificate of Occupancy, utility metering and allocation, and lease status as part of due diligence.</p>
+        <p>By acceptance of this Offering Memorandum, you agree that the information contained herein is confidential, that you will hold and treat it in the strictest confidence, that you will not photocopy or duplicate it, and that you will not disclose it to any other party without the prior written authorization of Broker. The Owner reserves the right, at its sole discretion, to reject any and all expressions of interest or offers and to terminate discussions at any time.</p>
+      </div>
+    </div>
+    <div class="rf"><div class="logo"><span class="dia"></span>Marcus &amp; Millichap · LAAA Team</div><div>11025 Blix · Offering Memorandum</div><div class="pg">02</div></div>
+  </div>
+</section>
+
+<!-- ============ 3 · TABLE OF CONTENTS ============ -->
+<section class="page">
+  <div class="page-pad">
+    <div class="rh">
+      <div><div class="eyebrow">Contents</div><div class="sect">Table of Contents</div></div>
+      <div class="tag">Offering Memorandum</div>
+    </div>
+    <div class="body" style="display:grid;grid-template-columns:0.84fr 1.16fr;gap:32px;grid-template-rows:1fr;">
+      <div style="background:var(--navy);color:#fff;padding:28px 28px;display:flex;flex-direction:column;">
+        <div class="eyebrow" style="color:var(--accent);">The Opportunity</div>
+        <div class="cover-divider" style="background:var(--accent);margin:14px 0 16px;"></div>
+        <div style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.78);line-height:1.8;">11023–11025 Blix Street<br/>Toluca Lake · Los Angeles, CA 91602</div>
+        <div style="margin-top:auto;padding-top:24px;">
+          <div style="font-size:8.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:11px;">Exclusively Listed By</div>
+          <div style="display:flex;gap:30px;">
+            <div>
+              <div class="serif" style="font-size:13.5px;font-weight:600;color:#fff;">Filip Niculete</div>
+              <div style="font-size:9.5px;color:rgba(255,255,255,.62);margin-top:4px;">(818) 212-2748</div>
+            </div>
+            <div>
+              <div class="serif" style="font-size:13.5px;font-weight:600;color:#fff;">Glen Scher</div>
+              <div style="font-size:9.5px;color:rgba(255,255,255,.62);margin-top:4px;">(818) 212-2808</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;justify-content:center;">
+        <div class="toc-row"><span class="num">01</span><span class="ti">Offering Summary</span><span class="dots"></span><span class="pg">04</span></div>
+        <div class="toc-row"><span class="num">02</span><span class="ti">Property Information</span><span class="dots"></span><span class="pg">05</span></div>
+        <div class="toc-row"><span class="num">—</span><span class="ti">Aerial Overview</span><span class="dots"></span><span class="pg">06</span></div>
+        <div class="toc-row"><span class="num">—</span><span class="ti">Property Overview</span><span class="dots"></span><span class="pg">07</span></div>
+        <div class="toc-row"><span class="num">03</span><span class="ti">Property Photographs</span><span class="dots"></span><span class="pg">08</span></div>
+        <div class="toc-row"><span class="num">04</span><span class="ti">Investment Highlights</span><span class="dots"></span><span class="pg">10</span></div>
+        <div class="toc-row"><span class="num">05</span><span class="ti">Rent Roll &amp; Unit Mix</span><span class="dots"></span><span class="pg">11</span></div>
+        <div class="toc-row"><span class="num">06</span><span class="ti">Income and Expense</span><span class="dots"></span><span class="pg">12</span></div>
+        <div class="toc-row"><span class="num">07</span><span class="ti">Sales Comparables</span><span class="dots"></span><span class="pg">13</span></div>
+        <div class="toc-row"><span class="num">08</span><span class="ti">On-Market Comparables</span><span class="dots"></span><span class="pg">14</span></div>
+        <div class="toc-row"><span class="num">09</span><span class="ti">Market Overview</span><span class="dots"></span><span class="pg">15</span></div>
+      </div>
+    </div>
+    <div class="rf"><div class="logo"><span class="dia"></span>Marcus &amp; Millichap · LAAA Team</div><div>11025 Blix · Offering Memorandum</div><div class="pg">03</div></div>
+  </div>
+</section>
+
+<!-- ============ OFFERING SUMMARY ============ -->
+<section class="page">
+  <div class="page-pad">
+    <div class="body" style="display:grid;grid-template-columns:0.86fr 1fr;gap:24px;align-content:start;">
+      <div style="display:flex;flex-direction:column;">
+        <div style="font-family:'Playfair Display';font-size:28px;font-weight:700;color:var(--navy);line-height:1.05;">Offering Summary</div>
+        <div style="font-size:12px;color:var(--muted);margin-top:5px;">11025 Blix &#183; Toluca Lake</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:18px 0 8px;">
+          <div class="osum-stat"><div class="ic"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#E07B3A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1.5" x2="12" y2="22.5"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div><div class="l">Offering Price</div><div class="v">$2,700,000</div></div>
+          <div class="osum-stat"><div class="ic"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#E07B3A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><rect x="6.5" y="12" width="3.2" height="6" fill="#E07B3A" stroke="none"/><rect x="12" y="8" width="3.2" height="10" fill="#E07B3A" stroke="none"/><rect x="17.5" y="5" width="3.2" height="13" fill="#E07B3A" stroke="none"/></svg></div><div class="l">Cap Rate</div><div class="v">5.27%</div></div>
+          <div class="osum-stat"><div class="ic"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#E07B3A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V9l5-4 5 4v12"/><path d="M13 21V11l4-3 4 3v10"/><line x1="2" y1="21" x2="22" y2="21"/></svg></div><div class="l"># of Units</div><div class="v">4</div></div>
+        </div>
+        <div class="osum-sec">Financial</div>
+        <div class="osum-row"><span class="l">Offering Price</span><span class="v">$2,700,000</span></div>
+        <div class="osum-row"><span class="l">Down Payment</span><span class="v">40% / $1,080,000</span></div>
+        <div class="osum-row"><span class="l">Net Operating Income</span><span class="v">$142,251</span></div>
+        <div class="osum-row"><span class="l">Cap Rate</span><span class="v">5.27%</span></div>
+        <div class="osum-row"><span class="l">GRM</span><span class="v">14.14</span></div>
+        <div class="osum-row"><span class="l">Price / SF</span><span class="v">$545</span></div>
+        <div class="osum-row"><span class="l">Rent / SF (Monthly)</span><span class="v">$3.21</span></div>
+        <div class="osum-row"><span class="l">Rent / SF (Annually)</span><span class="v">$38.52</span></div>
+        <div class="osum-row"><span class="l">Price / Unit</span><span class="v">$675,000</span></div>
+        <div class="osum-sec" style="margin-top:14px;">Operational</div>
+        <div class="osum-row"><span class="l">Gross SF</span><span class="v">&#177;4,958 SF</span></div>
+        <div class="osum-row"><span class="l">Rentable SF</span><span class="v">&#177;4,958 SF</span></div>
+        <div class="osum-row"><span class="l"># of Units</span><span class="v">4 (2 Townhomes + 2 ADUs)</span></div>
+        <div class="osum-row"><span class="l">Lot Size</span><span class="v">0.19 Acres (8,260 SF)</span></div>
+        <div class="osum-row"><span class="l">Occupancy</span><span class="v">100% Leased (Effective July 2026)</span></div>
+        <div class="osum-row"><span class="l">Year Built</span><span class="v">2025 (New Construction)</span></div>
+      </div>
+      <div style="display:grid;grid-template-rows:1fr 1fr;gap:8px;min-height:0;">
+        <div style="overflow:hidden;border:1px solid var(--line);background:var(--navy-deep);"><img src="./assets/ext_front.jpg" alt="Property" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+        <div style="overflow:hidden;border:1px solid var(--line);background:var(--navy-deep);"><img src="./assets/ext_overhead.jpg" alt="Aerial" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+      </div>
+    </div>
+    <div class="rf"><div class="logo"><span class="dia"></span>Marcus &amp; Millichap &#183; LAAA Team</div><div>11025 Blix &#183; Offering Memorandum</div><div class="pg">04</div></div>
+  </div>
+</section>
+
+<!-- ============ PROPERTY INFORMATION ============ -->
+<section class="page">
+  <div class="page-pad">
+    <div class="rh"><div><div class="eyebrow">02 &#183; Location</div><div class="sect">Property Information</div></div><div class="tag">11025 Blix St &#183; Toluca Lake</div></div>
+    <div class="body">
+      <div class="map-box" style="height:100%;"><img src="./assets/gmap.png" alt="Property Location Map"></div>
+    </div>
+    <div class="rf"><div class="logo"><span class="dia"></span>Marcus &amp; Millichap &#183; LAAA Team</div><div>11025 Blix &#183; Offering Memorandum</div><div class="pg">05</div></div>
+  </div>
+</section>
+
+<!-- ============ AERIAL OVERVIEW ============ -->
+<section class="page">
+  <div class="page-pad">
+    <div class="rh"><div><div class="eyebrow">02 &#183; Aerial</div><div class="sect">Aerial Overview</div></div><div class="tag">Two-Structure Site &#183; Owned Solar</div></div>
+    <div class="body">
+      <div class="map-box" style="height:100%;"><img src="./assets/ext_aerial.jpg" alt="Aerial Overview"></div>
+    </div>
+    <div class="rf"><div class="logo"><span class="dia"></span>Marcus &amp; Millichap &#183; LAAA Team</div><div>11025 Blix &#183; Offering Memorandum</div><div class="pg">06</div></div>
+  </div>
+</section>
+
+<!-- ============ PROPERTY OVERVIEW (narrative) ============ -->
+<section class="page">
+  <div class="page-pad">
+    <div class="rh">
+      <div><div class="eyebrow">02 · The Asset In Detail</div><div class="sect">Property Overview</div></div>
+      <div class="tag">Narrative Summary</div>
+    </div>
+    <div class="body" style="display:flex;flex-direction:column;gap:14px;">
+      <div style="display:flex;flex-direction:column;gap:13px;">
+        <div style="font-size:11.5px;line-height:1.6;color:#3a4150;">
+          <p style="margin-top:0;">Marcus &amp; Millichap is pleased to present 11025 Blix, a brand-new 2025 four-unit community in the heart of Toluca Lake. The Property comprises two structures on a single 8,260-square-foot lot — a front duplex of two 4BR/3BA split-level townhomes and a rear pair of detached 2BR/2BA accessory dwelling units — totaling ±4,958 rentable square feet.</p>
+          <p>Every unit was delivered with European cabinetry, stainless Samsung appliances, in-unit washer/dryer, vinyl-plank flooring, custom shades, and central HVAC. The property is gated and carries owned solar offsetting common-area load; the two front townhomes include four dedicated parking spaces. There is no deferred maintenance and the lowest reserve and repair tier appropriate for a 2025 build.</p>
+          <p>By its 2025 vintage the asset is exempt from the City of Los Angeles Rent Stabilization Ordinance and California AB 1482, and the owner-friendly expense structure — tenants pay trash, gas, electric, and insurance — drives a clean operating profile. The all-new, low-touch configuration broadens the buyer pool well beyond a typical value-add four-unit to 1031 exchange buyers, private local investors, and first-time multifamily buyers seeking turnkey product.</p>
+          <p>Offered at $2,700,000 — $675,000 per unit and $545 per square foot — the Property reflects a 5.27% cap rate on stabilized income, pricing approximately 3% below the sold-comp per-unit median while delivering a measurable yield premium to recent Toluca Lake and North Hollywood closings. A disciplined, clear-to-trade opportunity in an established, Westside-adjacent submarket.</p>
+        </div>
+        <div class="specgrid">
+          <div class="speccard"><div class="l">Units</div><div class="v">4</div></div>
+          <div class="speccard"><div class="l">Configuration</div><div class="v">2 Townhomes + 2 ADUs</div></div>
+          <div class="speccard"><div class="l">Structures</div><div class="v">2 (Front + Rear)</div></div>
+          <div class="speccard"><div class="l">Rentable Area</div><div class="v">±4,958 SF</div></div>
+          <div class="speccard"><div class="l">Lot Size</div><div class="v">±8,260 SF (0.19 AC)</div></div>
+          <div class="speccard"><div class="l">Year Built</div><div class="v">2025 (New)</div></div>
+          <div class="speccard"><div class="l">Stories</div><div class="v">1–2</div></div>
+          <div class="speccard"><div class="l">Construction</div><div class="v">Wood Frame / Stucco</div></div>
+          <div class="speccard"><div class="l">Parking</div><div class="v">4 · Front Units</div></div>
+          <div class="speccard"><div class="l">Zoning</div><div class="v">LAR1 · APN 2353-026-024</div></div>
+          <div class="speccard"><div class="l">Rent Control</div><div class="v">Exempt (2025)</div></div>
+          <div class="speccard"><div class="l">Sale Type</div><div class="v">Stabilized · Turnkey</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="rf"><div class="logo"><span class="dia"></span>Marcus &amp; Millichap · LAAA Team</div><div>11025 Blix · Offering Memorandum</div><div class="pg">07</div></div>
+  </div>
+</section>
+
+<!-- ============ PROPERTY PHOTOGRAPHS I ============ -->
+<section class="page">
+  <div class="page-pad">
+    <div class="rh">
+      <div><div class="eyebrow">03 &#183; The Asset</div><div class="sect">Property Photographs</div></div>
+      <div class="tag">Exteriors &amp; Grounds</div>
+    </div>
+    <div class="body photos4">
+      <figure><div class="ph-img"><img src="./assets/ext_front2.jpg" alt=""></div><figcaption>Front Elevation &amp; Gated Entry</figcaption></figure>
+      <figure><div class="ph-img"><img src="./assets/ext_drive.jpg" alt=""></div><figcaption>Gated Drive &amp; Owned Solar</figcaption></figure>
+      <figure><div class="ph-img"><img src="./assets/ext_rear_adu.jpg" alt=""></div><figcaption>Detached Rear ADU Building</figcaption></figure>
+      <figure><div class="ph-img"><img src="./assets/ext_neighborhood.jpg" alt=""></div><figcaption>Aerial · Toluca Lake Setting</figcaption></figure>
+    </div>
+    <div class="rf"><div class="logo"><span class="dia"></span>Marcus &amp; Millichap &#183; LAAA Team</div><div>11025 Blix &#183; Offering Memorandum</div><div class="pg">08</div></div>
+  </div>
+</section>
+
+<!-- ============ PROPERTY PHOTOGRAPHS II ============ -->
+<section class="page">
+  <div class="page-pad">
+    <div class="rh">
+      <div><div class="eyebrow">03 &#183; The Asset</div><div class="sect">Property Photographs</div></div>
+      <div class="tag">Interiors &amp; Finishes</div>
+    </div>
+    <div class="body photos4">
+      <figure><div class="ph-img"><img src="./assets/int_kitchen.png" alt=""></div><figcaption>Chef&#8217;s Kitchen &#183; Samsung SS Appliances</figcaption></figure>
+      <figure><div class="ph-img"><img src="./assets/int_living.png" alt=""></div><figcaption>Open-Concept Living &amp; Kitchen</figcaption></figure>
+      <figure><div class="ph-img"><img src="./assets/int_bedroom.png" alt=""></div><figcaption>Bedroom &#183; Vinyl-Plank Flooring</figcaption></figure>
+      <figure><div class="ph-img"><img src="./assets/int_bath.png" alt=""></div><figcaption>Spa-Style Bath</figcaption></figure>
+    </div>
+    <div class="rf"><div class="logo"><span class="dia"></span>Marcus &amp; Millichap &#183; LAAA Team</div><div>11025 Blix &#183; Offering Memorandum</div><div class="pg">09</div></div>
+  </div>
+</section>
+
+<!-- ============ INVESTMENT HIGHLIGHTS ============ -->
+<section class="page">
+  <div class="page-pad">
+    <div class="rh">
+      <div><div class="eyebrow">04 · Why Blix Street</div><div class="sect">Investment Highlights</div></div>
+      <div class="tag">Turnkey New Construction · Toluca Lake</div>
+    </div>
+    <div class="body" style="display:flex;align-items:center;">
+      <div class="hl-grid">
+        <div class="hl-card"><div class="chip">01</div><div class="tx"><b>Brand-New 2025 Construction</b><span>Zero deferred maintenance and the lowest reserve and R&amp;M tier &#8212; a true turnkey, low-touch operating profile.</span></div></div>
+        <div class="hl-card"><div class="chip">02</div><div class="tx"><b>Established Toluca Lake Address</b><span>Affluent, Westside-adjacent submarket where only ~3.4% of housing is attached duplex/townhome &#8212; scarce newer stock.</span></div></div>
+        <div class="hl-card"><div class="chip">03</div><div class="tx"><b>Owner-Friendly Expenses</b><span>Tenants pay trash, gas, electric &amp; insurance; owned solar offsets common-area load &#8212; a 23.2% expense ratio.</span></div></div>
+        <div class="hl-card"><div class="chip">04</div><div class="tx"><b>Vintage-Exempt</b><span>No RSO, no AB 1482, no LAHD/SCEP registration fees &#8212; full operational flexibility on rents and tenancy.</span></div></div>
+        <div class="hl-card"><div class="chip">05</div><div class="tx"><b>Stabilized Income</b><span>$190,980 GSR with all four units leased at market (4th effective July 2026) &#8212; achieved, de-risked rents.</span></div></div>
+        <div class="hl-card"><div class="chip">06</div><div class="tx"><b>Residential-Style Financing</b><span>As a four-unit, the Property qualifies for higher-leverage, residential-style financing.</span></div></div>
+        <div class="hl-card"><div class="chip">07</div><div class="tx"><b>Premium Turnkey Finishes</b><span>European cabinetry, Samsung stainless appliances, in-unit W/D, central HVAC, custom shades &amp; owned solar.</span></div></div>
+        <div class="hl-card"><div class="chip">08</div><div class="tx"><b>Priced to Clear</b><span>$675K/unit sits ~3% below the sold-comp median, positioned to trade within a 60&#8211;90 day window.</span></div></div>
+      </div>
+    </div>
+    <div class="rf"><div class="logo"><span class="dia"></span>Marcus &amp; Millichap · LAAA Team</div><div>11025 Blix · Offering Memorandum</div><div class="pg">10</div></div>
+  </div>
+</section>
+
+<!-- ============ RENT ROLL & UNIT MIX ============ -->
+<section class="page">
+  <div class="page-pad">
+    <div class="rh"><div><div class="eyebrow">05 &#183; Income</div><div class="sect">Rent Roll &amp; Unit Mix</div></div><div class="tag">Stabilized &#183; Market Rents</div></div>
+    <div class="body" style="display:flex;flex-direction:column;gap:14px;">
+      <table class="big">
+        <thead><tr><th>Unit</th><th>Type</th><th>SF</th><th>Rent / Mo</th><th>Rent / SF</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td>11025</td><td>4BD / 3BA Townhome (Front)</td><td>1,700</td><td>$4,895</td><td>$2.88</td><td>Occupied · Lease to 1/31/27</td></tr>
+          <tr><td>11025&#189;</td><td>4BD / 3BA Townhome (Front)</td><td>1,666</td><td>$4,750</td><td>$2.85</td><td>Occupied · Lease to 3/31/27</td></tr>
+          <tr><td>11023</td><td>2BD / 2BA ADU (Rear)</td><td>796</td><td>$3,275</td><td>$4.11</td><td>Occupied · Lease to 2/07/27</td></tr>
+          <tr><td>11023&#189;</td><td>2BD / 2BA ADU (Rear)</td><td>796</td><td>$2,995</td><td>$3.76</td><td>Leased · Effective 7/1/26</td></tr>
+          <tr class="sum"><td>Total / Avg</td><td>4 Units</td><td>4,958</td><td>$15,915</td><td>$3.21</td><td>100% Leased</td></tr>
+        </tbody>
+      </table>
+      <div class="t-note" style="margin-top:7px;">Rents reflect achieved, market-clearing leases; the rear ADU (11023&#189;) is leased effective July 1, 2026 at the $2,995 market rate, bringing the Property to 100% leased. Annual gross scheduled rent at the stabilized rent roll is $190,980. Figures to be buyer-verified.</div>
+      <div class="tcard-trio">
+        <div class="tcard" style="text-align:center;"><div class="ct">Annual Scheduled Rent</div><div class="big" style="font-size:26px;">$190,980</div><p style="margin-top:5px;">Stabilized gross scheduled rent</p></div>
+        <div class="tcard" style="text-align:center;"><div class="ct">Occupancy</div><div class="big" style="font-size:26px;color:var(--accent);">100%</div><p style="margin-top:5px;">Fully leased · effective July 2026</p></div>
+        <div class="tcard" style="text-align:center;"><div class="ct">Rent Per Foot</div><div style="display:flex;justify-content:center;gap:22px;margin-top:8px;"><div><div class="big" style="font-size:24px;">$3.21</div><div style="font-size:8px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-top:4px;">Monthly / SF</div></div></div><p style="margin-top:7px;">Scheduled rent per rentable SF</p></div>
+      </div>
+      <div>
+        <div style="font-size:10px;font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:.06em;margin-bottom:7px;">Unit Mix Summary</div>
+        <table>
+          <thead><tr><th>Unit Type</th><th>Qty</th><th>Avg SF</th><th>Avg Rent</th><th>Rent / SF</th></tr></thead>
+          <tbody>
+            <tr><td>4BD / 3BA Townhome (Front)</td><td>2</td><td>1,683</td><td>$4,823</td><td>$2.87</td></tr>
+            <tr><td>2BD / 2BA ADU (Rear)</td><td>2</td><td>796</td><td>$3,135</td><td>$3.94</td></tr>
+            <tr class="sum"><td>Weighted Avg / Total</td><td>4</td><td>1,240</td><td>$3,979</td><td>$3.21</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="rf"><div class="logo"><span class="dia"></span>Marcus &amp; Millichap &#183; LAAA Team</div><div>11025 Blix &#183; Offering Memorandum</div><div class="pg">11</div></div>
+  </div>
+</section>
+
+<!-- ============ INCOME, EXPENSE & RETURNS ============ -->
+<section class="page">
+  <div class="page-pad">
+    <div class="rh"><div><div class="eyebrow">06 &#183; Financials</div><div class="sect">Income and Expense</div></div><div class="tag">Stabilized Underwriting · Reassessed</div></div>
+    <div class="body" style="display:grid;grid-template-columns:1fr 1.06fr;gap:20px;align-content:start;">
+      <div style="display:flex;flex-direction:column;gap:11px;">
+        <div class="fsec">
+          <div class="fbar">Summary</div>
+          <div class="frows">
+            <div class="frow" style="grid-template-columns:1fr auto 56px;"><span class="l">Price</span><span class="v">$2,700,000</span><span class="v pc"></span></div>
+            <div class="frow" style="grid-template-columns:1fr auto 56px;"><span class="l">Down Payment</span><span class="v">$1,080,000</span><span class="v pc">40%</span></div>
+            <div class="frow" style="grid-template-columns:1fr auto 56px;"><span class="l">Number of Units</span><span class="v">4</span><span class="v pc"></span></div>
+            <div class="frow" style="grid-template-columns:1fr auto 56px;"><span class="l">Price Per Unit</span><span class="v">$675,000</span><span class="v pc"></span></div>
+            <div class="frow" style="grid-template-columns:1fr auto 56px;"><span class="l">Price Per SqFt</span><span class="v">$545</span><span class="v pc"></span></div>
+            <div class="frow" style="grid-template-columns:1fr auto 56px;"><span class="l">Rentable SqFt</span><span class="v">4,958</span><span class="v pc"></span></div>
+            <div class="frow" style="grid-template-columns:1fr auto 56px;"><span class="l">Lot Size</span><span class="v">8,260 SF &#183; 0.19 AC</span><span class="v pc"></span></div>
+            <div class="frow" style="grid-template-columns:1fr auto 56px;"><span class="l">Year Built</span><span class="v">2025 (New)</span><span class="v pc"></span></div>
+          </div>
+        </div>
+        <div class="fsec">
+          <div class="fbar" style="grid-template-columns:1fr 90px;"><span>Returns</span><span style="text-align:right;">Stabilized</span></div>
+          <div class="frows">
+            <div class="frow" style="grid-template-columns:1fr 90px;"><span class="l">CAP Rate</span><span class="v">5.27%</span></div>
+            <div class="frow" style="grid-template-columns:1fr 90px;"><span class="l">GRM</span><span class="v">14.14</span></div>
+            <div class="frow" style="grid-template-columns:1fr 90px;"><span class="l">Cash-on-Cash</span><span class="v">2.38%</span></div>
+            <div class="frow" style="grid-template-columns:1fr 90px;"><span class="l">Debt Coverage Ratio</span><span class="v">1.22</span></div>
+          </div>
+        </div>
+        <div class="fsec">
+          <div class="fbar" style="grid-template-columns:1fr auto;"><span>Financing</span><span style="text-align:right;">1st Loan</span></div>
+          <div class="frows">
+            <div class="frow" style="grid-template-columns:1fr auto;"><span class="l">Loan Amount</span><span class="v">$1,620,000</span></div>
+            <div class="frow" style="grid-template-columns:1fr auto;"><span class="l">Loan-to-Value</span><span class="v">60%</span></div>
+            <div class="frow" style="grid-template-columns:1fr auto;"><span class="l">Interest Rate</span><span class="v">6.00%</span></div>
+            <div class="frow" style="grid-template-columns:1fr auto;"><span class="l">Amortization</span><span class="v">30 Years</span></div>
+            <div class="frow" style="grid-template-columns:1fr auto;"><span class="l">Loan Constant</span><span class="v">7.19%</span></div>
+          </div>
+        </div>
+        <div class="fnote">Loan information is illustrative and subject to change. Contact your Marcus &amp; Millichap Capital Corporation representative.</div>
+        <div class="fsec">
+          <div class="fbar" style="grid-template-columns:40px 1fr 56px 72px;white-space:nowrap;"><span>Qty</span><span>Unit Type</span><span style="text-align:right;">Avg SF</span><span style="text-align:right;">Rent</span></div>
+          <div class="frows">
+            <div class="frow" style="grid-template-columns:40px 1fr 56px 72px;"><span class="l">2</span><span class="l">4BD / 3BA Townhome</span><span class="v">1,683</span><span class="v">$4,823</span></div>
+            <div class="frow" style="grid-template-columns:40px 1fr 56px 72px;"><span class="l">2</span><span class="l">2BD / 2BA ADU</span><span class="v">796</span><span class="v">$3,135</span></div>
+          </div>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:11px;">
+        <div class="fsec">
+          <div class="fbar" style="grid-template-columns:1fr 92px;"><span>Income</span><span style="text-align:right;">Annual</span></div>
+          <div class="frows">
+            <div class="frow" style="grid-template-columns:1fr 92px;"><span class="l">Gross Scheduled Rent</span><span class="v">$190,980</span></div>
+            <div class="frow" style="grid-template-columns:1fr 92px;"><span class="l">Less: Vacancy / Collection (3.0%)</span><span class="v">($5,729)</span></div>
+            <div class="frow" style="grid-template-columns:1fr 92px;"><span class="l">Other Income</span><span class="v">$0</span></div>
+            <div class="frow t" style="grid-template-columns:1fr 92px;"><span class="l">Effective Gross Income</span><span class="v">$185,251</span></div>
+            <div class="frow" style="grid-template-columns:1fr 92px;"><span class="l">Less: Operating Expenses <span class="pc">(23.2%)</span></span><span class="v">($43,000)</span></div>
+            <div class="frow t" style="grid-template-columns:1fr 92px;"><span class="l">Net Operating Income</span><span class="v">$142,251</span></div>
+            <div class="frow" style="grid-template-columns:1fr 92px;"><span class="l">Less: Debt Service</span><span class="v">($116,559)</span></div>
+            <div class="frow" style="grid-template-columns:1fr 92px;"><span class="l">Net Cash Flow After Debt</span><span class="v">$25,692 <span class="pc">2.38%</span></span></div>
+            <div class="frow" style="grid-template-columns:1fr 92px;"><span class="l">Plus: Principal Reduction</span><span class="v">$19,884</span></div>
+            <div class="frow t" style="grid-template-columns:1fr 92px;"><span class="l">Total Return</span><span class="v">$45,576 <span class="pc">4.22%</span></span></div>
+          </div>
+        </div>
+        <div class="fsec">
+          <div class="fbar" style="grid-template-columns:1fr 92px;"><span>Expenses</span><span style="text-align:right;">Annual</span></div>
+          <div class="frows">
+            <div class="frow" style="grid-template-columns:1fr 92px;"><span class="l">Real Estate Taxes (1.25%)</span><span class="v">$33,750</span></div>
+            <div class="frow" style="grid-template-columns:1fr 92px;"><span class="l">Insurance</span><span class="v">$4,250</span></div>
+            <div class="frow" style="grid-template-columns:1fr 92px;"><span class="l">Water / Sewer</span><span class="v">$1,200</span></div>
+            <div class="frow" style="grid-template-columns:1fr 92px;"><span class="l">Trash, Gas, Electric <span class="pc">(tenant-paid)</span></span><span class="v">$0</span></div>
+            <div class="frow" style="grid-template-columns:1fr 92px;"><span class="l">Repairs &amp; Maintenance</span><span class="v">$2,000</span></div>
+            <div class="frow" style="grid-template-columns:1fr 92px;"><span class="l">Contract Services</span><span class="v">$1,200</span></div>
+            <div class="frow" style="grid-template-columns:1fr 92px;"><span class="l">Operating Reserves</span><span class="v">$600</span></div>
+            <div class="frow t" style="grid-template-columns:1fr 92px;"><span class="l">Total Operating Expenses</span><span class="v">$43,000</span></div>
+            <div class="frow" style="grid-template-columns:1fr 92px;"><span class="l">Expenses / Unit</span><span class="v">$10,750</span></div>
+            <div class="frow" style="grid-template-columns:1fr 92px;"><span class="l">Expenses / SF</span><span class="v">$8.67</span></div>
+            <div class="frow" style="grid-template-columns:1fr 92px;"><span class="l">Expense Ratio (% EGI)</span><span class="v">23.2%</span></div>
+          </div>
+        </div>
+        <div class="fnote">Real estate taxes reflect reassessment to the purchase price at close (Prop 13). Trash, gas, electric &amp; insurance are tenant-paid per MLS; owned solar offsets common-area load. No operating history exists for this 2025 build &#8212; figures are benchmark-built; buyer to verify all actuals in due diligence.</div>
+      </div>
+    </div>
+    <div class="rf"><div class="logo"><span class="dia"></span>Marcus &amp; Millichap &#183; LAAA Team</div><div>11025 Blix &#183; Offering Memorandum</div><div class="pg">12</div></div>
+  </div>
+</section>
+
+<!-- ============ SALES COMPARABLES ============ -->
+<section class="page">
+  <div class="page-pad">
+    <div class="rh"><div><div class="eyebrow">07 &#183; Market Evidence</div><div class="sect">Sales Comparables</div></div><div class="tag">Toluca Lake / North Hollywood</div></div>
+    <div class="body" style="display:flex;flex-direction:column;gap:13px;">
+      <table style="font-size:9.5px;">
+        <thead><tr><th>Comparable</th><th>Submarket</th><th>Yr</th><th>Sale Price</th><th>$/Unit</th><th>$/SF</th><th>Cap</th><th>Close</th></tr></thead>
+        <tbody>
+          <tr class="hl"><td>1 &#183; 10706 Camarillo St &#183; closest</td><td>Toluca Lake</td><td>2017</td><td>$2,800,000</td><td>$700,000</td><td>$474</td><td>5.37%</td><td>7/01/25</td></tr>
+          <tr><td>2 &#183; 5648 Cartwright Ave</td><td>North Hollywood</td><td>2025</td><td>$2,775,000</td><td>$693,750</td><td>$501</td><td>5.82%</td><td>12/01/25</td></tr>
+          <tr><td>3 &#183; 5626 Willowcrest Ave</td><td>North Hollywood</td><td>2017</td><td>$2,525,000</td><td>$631,250</td><td>$434</td><td>4.93%</td><td>4/01/25</td></tr>
+          <tr><td>4 &#183; 11447 Cumpston St</td><td>North Hollywood</td><td>2025</td><td>$3,350,000</td><td>$837,500</td><td>$508</td><td>5.09%</td><td>12/01/25</td></tr>
+          <tr class="sum"><td>Comparable Median</td><td>&#8212;</td><td>&#8212;</td><td>$2,787,500</td><td>$696,875</td><td>$488</td><td>5.23%</td><td>&#8212;</td></tr>
+          <tr class="sum hl"><td>Subject &#8212; 11025 Blix St</td><td>Toluca Lake</td><td>2025</td><td>$2,700,000</td><td>$675,000</td><td>$545</td><td>5.27%</td><td>Asking</td></tr>
+        </tbody>
+      </table>
+      <div style="display:grid;grid-template-columns:1.5fr 1fr;gap:14px;flex:1;min-height:0;">
+        <div class="map-box"><img src="./assets/sale_map.png" alt="Sale Comparables Map"><div class="map-cap">Toluca Lake / North Hollywood &#183; Sold 4-Unit Comparables</div></div>
+        <div style="display:flex;flex-direction:column;gap:12px;">
+          <div class="tcard-duo">
+            <div class="tcard" style="text-align:center;"><div class="ct">Subject $/Unit</div><div class="big" style="font-size:22px;color:var(--accent);">$675K</div><p style="margin-top:4px;">~3% below comp median</p></div>
+            <div class="tcard" style="text-align:center;"><div class="ct">Going-In Cap</div><div class="big" style="font-size:22px;color:var(--accent);">5.27%</div><p style="margin-top:4px;">above 5.23% median</p></div>
+          </div>
+          <div class="tcard dark" style="flex:1;"><div class="ct">Notes</div><p>The subject prices below the sold-comp median on a per-unit basis (<strong>$675K vs. $697K</strong>) while offering a 5.27% cap &#8212; just above the 5.23% comp median &#8212; a measurable yield premium to recent closings for brand-new Toluca Lake and NoHo four-unit product. The $545/SF reflects the subject&#8217;s newest-vintage construction and Toluca Lake address.</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="rf"><div class="logo"><span class="dia"></span>Marcus &amp; Millichap &#183; LAAA Team</div><div>11025 Blix &#183; Offering Memorandum</div><div class="pg">13</div></div>
+  </div>
+</section>
+
+<!-- ============ ON-MARKET COMPARABLES ============ -->
+<section class="page">
+  <div class="page-pad">
+    <div class="rh"><div><div class="eyebrow">08 &#183; Market Evidence</div><div class="sect">On-Market Comparables</div></div><div class="tag">Active 4-Unit &#183; San Fernando Valley</div></div>
+    <div class="body" style="display:flex;flex-direction:column;gap:13px;">
+      <table style="font-size:9.5px;">
+        <thead><tr><th>Comparable</th><th>Submarket</th><th>Yr</th><th>List Price</th><th>$/Unit</th><th>$/SF</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td>1 &#183; <a href="https://www.zillow.com/homedetails/5743-Case-Ave-North-Hollywood-CA-91601/20012048_zpid/" target="_blank" style="color:var(--accent);text-decoration:underline;">5743 Case Ave</a></td><td>North Hollywood</td><td>2018</td><td>$2,400,000</td><td>$600,000</td><td>$530</td><td>Pending (2 DOM)</td></tr>
+          <tr><td>2 &#183; <a href="https://www.zillow.com/homedetails/5622-Willowcrest-Ave-North-Hollywood-CA-91601/20040689_zpid/" target="_blank" style="color:var(--accent);text-decoration:underline;">5622 Willowcrest Ave</a></td><td>North Hollywood</td><td>2025</td><td>$2,250,000</td><td>$562,500</td><td>$442</td><td>Pending</td></tr>
+          <tr><td>3 &#183; <a href="https://www.zillow.com/homedetails/11026-Hortense-St-North-Hollywood-CA-91602/20018699_zpid/" target="_blank" style="color:var(--accent);text-decoration:underline;">11026 Hortense St</a></td><td>Toluca Lake</td><td>2025</td><td>$5,395,000</td><td>$1,348,750</td><td>$897</td><td>Active · 111 DOM</td></tr>
+          <tr><td>4 &#183; 6420 Hanna Ave</td><td>Woodland Hills</td><td>2025</td><td>$2,525,000</td><td>$631,250</td><td>$482</td><td>Active · MMI</td></tr>
+          <tr><td>5 &#183; <a href="https://www.zillow.com/homedetails/19453-Strathern-St-Reseda-CA-91335/19906466_zpid/" target="_blank" style="color:var(--accent);text-decoration:underline;">19453 Strathern St</a></td><td>Reseda</td><td>2026</td><td>$2,495,000</td><td>$623,750</td><td>$586</td><td>Active</td></tr>
+          <tr><td>6 &#183; <a href="https://www.zillow.com/homedetails/5750-Kester-Ave-Van-Nuys-CA-91411/19972492_zpid/" target="_blank" style="color:var(--accent);text-decoration:underline;">5750 Kester Ave</a></td><td>Van Nuys</td><td>2021</td><td>$3,460,000</td><td>$865,000</td><td>$433</td><td>Active</td></tr>
+          <tr class="sum"><td>Comparable Average</td><td>&#8212;</td><td>&#8212;</td><td>$3,087,500</td><td>$771,875</td><td>$562</td><td>&#8212;</td></tr>
+          <tr class="sum hl"><td>Subject &#8212; 11025 Blix St</td><td>Toluca Lake</td><td>2025</td><td>$2,700,000</td><td>$675,000</td><td>$545</td><td>Asking</td></tr>
+        </tbody>
+      </table>
+      <div style="display:grid;grid-template-columns:1.5fr 1fr;gap:14px;flex:1;min-height:0;">
+        <div class="map-box"><img src="./assets/onmkt_map.png" alt="On-Market Comparables Map"><div class="map-cap">San Fernando Valley &#183; Active 4-Unit Listings (1&#8211;6 = comps)</div></div>
+        <div style="display:flex;flex-direction:column;gap:12px;">
+          <div class="tcard-duo">
+            <div class="tcard" style="text-align:center;"><div class="ct">Subject $/Unit</div><div class="big" style="font-size:22px;color:var(--accent);">$675K</div><p style="margin-top:4px;">below active avg</p></div>
+            <div class="tcard" style="text-align:center;"><div class="ct">Active Avg $/Unit</div><div class="big" style="font-size:22px;color:var(--good);">$772K</div><p style="margin-top:4px;">6 active listings</p></div>
+          </div>
+          <div class="tcard dark" style="flex:1;"><div class="ct">Notes</div><p>Two NoHo comps went pending &#8212; one in just <strong>2 days</strong> &#8212; confirming active demand when four-unit product is priced inside the comp range. The Hortense compound two doors south, listed aspirationally at <strong>$5.395M</strong>, sits unsold after 111 days &#8212; the cautionary counterpoint. The subject at $2.7M is deliberately positioned to clear, not to sit.</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="rf"><div class="logo"><span class="dia"></span>Marcus &amp; Millichap &#183; LAAA Team</div><div>11025 Blix &#183; Offering Memorandum</div><div class="pg">14</div></div>
+  </div>
+</section>
+
+<!-- ============ MARKET OVERVIEW ============ -->
+<section class="page">
+  <div class="page-pad">
+    <div class="rh"><div><div class="eyebrow">09 &#183; Location</div><div class="sect">Market Overview</div></div><div class="tag">Toluca Lake &#183; 91602</div></div>
+    <div class="body" style="display:flex;flex-direction:column;gap:13px;justify-content:center;">
+      <div class="map-box" style="height:2.5in;"><svg viewBox="0 0 1080 380" preserveAspectRatio="xMidYMid slice">
+          <rect width="1080" height="380" fill="#eef1ee"/>
+          <!-- LA River (east edge) -->
+          <path d="M980 0 C 1010 110, 955 210, 990 320 C 1005 370, 980 380, 985 380" fill="none" stroke="#9fc1d6" stroke-width="12"/>
+          <text x="1015" y="200" font-family="Inter" font-size="12" fill="#5e86a0" transform="rotate(90 1015 200)">LA River</text>
+          <!-- Freeways -->
+          <g stroke="#E07B3A" stroke-width="7" fill="none" opacity="0.92">
+            <path d="M40 86 C 360 70, 720 96, 1050 80"/>
+            <path d="M150 360 C 420 250, 720 175, 1055 95"/>
+            <path d="M250 20 C 270 150, 285 280, 295 380"/>
+          </g>
+          <g font-family="Inter" font-size="12" font-weight="700" fill="#fff">
+            <rect x="360" y="70" width="44" height="20" rx="3" fill="#0D2245"/><text x="382" y="85" text-anchor="middle">SR-134</text>
+            <rect x="700" y="150" width="44" height="20" rx="3" fill="#0D2245"/><text x="722" y="165" text-anchor="middle">US-101</text>
+            <rect x="258" y="120" width="44" height="20" rx="3" fill="#0D2245"/><text x="280" y="135" text-anchor="middle">SR-170</text>
+          </g>
+          <!-- Metro B (Red) Line -->
+          <path d="M260 300 C 520 285, 780 300, 1020 286" fill="none" stroke="#c0392b" stroke-width="6" stroke-dasharray="3 7"/>
+          <circle cx="560" cy="293" r="9" fill="#c0392b" stroke="#fff" stroke-width="2.5"/>
+          <text x="560" y="281" font-family="Inter" font-size="11" font-weight="600" fill="#922" text-anchor="middle">Universal / Studio City Station</text>
+          <text x="1020" y="270" font-family="Inter" font-size="11" font-weight="700" fill="#922" text-anchor="end">Metro B (Red) Line</text>
+          <!-- Studios -->
+          <g fill="#b8c0cb">
+            <rect x="60" y="160" width="26" height="60"/><rect x="92" y="140" width="24" height="80"/><rect x="122" y="172" width="20" height="48"/>
+          </g>
+          <text x="100" y="240" font-family="Inter" font-size="13" font-weight="700" fill="#0D2245" text-anchor="middle">Universal</text>
+          <text x="100" y="256" font-family="Inter" font-size="11" fill="#6B7280" text-anchor="middle">Studios</text>
+          <g fill="#b8c0cb">
+            <rect x="860" y="150" width="24" height="62"/><rect x="890" y="132" width="24" height="80"/><rect x="920" y="166" width="20" height="46"/>
+          </g>
+          <text x="900" y="118" font-family="Inter" font-size="13" font-weight="700" fill="#0D2245" text-anchor="middle">Warner Bros.</text>
+          <!-- Subject -->
+          <g>
+            <circle cx="605" cy="190" r="18" fill="#E07B3A" stroke="#fff" stroke-width="3.5"/>
+            <text x="605" y="197" font-family="Inter" font-size="18" font-weight="700" fill="#fff" text-anchor="middle">★</text>
+            <text x="605" y="161" font-family="Inter" font-size="14" font-weight="700" fill="#0D2245" text-anchor="middle">Blix St</text>
+          </g>
+        </svg><div class="map-cap">Toluca Lake &#183; 11025 Blix St &amp; Surrounding Submarket</div></div>
+      <div class="ret-row">
+        <div class="tcard"><div class="ct">Studio-Adjacent</div><p>&#177;3 miles to Warner Bros. &amp; Universal Studios &#8212; the entertainment job core.</p></div>
+        <div class="tcard"><div class="ct">Freeway Access</div><p>Direct to the US-101, SR-134 &amp; SR-170 &#8212; fast connections across the basin.</p></div>
+        <div class="tcard"><div class="ct">Rail Transit</div><p>Metro B (Red) Line at Universal / Studio City less than one mile away.</p></div>
+        <div class="tcard"><div class="ct">Scarce New Stock</div><p>Only ~3.4% of local housing is attached duplex/townhome &#8212; supply-constrained.</p></div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:12px;">
+        <div class="tcard" style="padding:13px 12px;"><div class="big" style="font-size:21px;color:var(--good);">$97,994</div><div class="ct" style="margin-top:6px;">Median HH Income</div></div>
+        <div class="tcard" style="padding:13px 12px;"><div class="big" style="font-size:21px;">$2,226</div><div class="ct" style="margin-top:6px;">Median Gross Rent</div></div>
+        <div class="tcard" style="padding:13px 12px;"><div class="big" style="font-size:21px;">91602</div><div class="ct" style="margin-top:6px;">Toluca Lake ZIP</div></div>
+        <div class="tcard" style="padding:13px 12px;"><div class="big" style="font-size:21px;">~3.4%</div><div class="ct" style="margin-top:6px;">Attached Housing</div></div>
+        <div class="tcard" style="padding:13px 12px;"><div class="big" style="font-size:21px;">&lt;1 mi</div><div class="ct" style="margin-top:6px;">Metro B Line</div></div>
+        <div class="tcard" style="padding:13px 12px;"><div class="big" style="font-size:21px;">2025</div><div class="ct" style="margin-top:6px;">Subject Built</div></div>
+      </div>
+      <p style="font-size:8px;color:var(--muted);font-style:italic;margin:0;">Demographics: U.S. Census Bureau / ACS estimates (ZIP 91602) and MLS; approximate and to be buyer-verified.</p>
+    </div>
+    <div class="rf"><div class="logo"><span class="dia"></span>Marcus &amp; Millichap &#183; LAAA Team</div><div>11025 Blix &#183; Offering Memorandum</div><div class="pg">15</div></div>
+  </div>
+</section>
+
+<!-- ============ BACK / CONTACT ============ -->
+<section class="page cover">
+  <div class="hero"><img src="./assets/ext_back.jpg" alt="" /></div>
+  <div class="grad"></div>
+  <div class="frame"></div>
+  <div class="cover-top">
+    <img class="team-logo" src="./assets/laaa-team-white.png" alt="Marcus & Millichap — LAAA Team" />
+  </div>
+  <div class="cover-footer">
+    <div class="cover-divider"></div>
+    <div style="font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:9px;">Exclusively Listed By</div>
+    <h1 class="cf-title" style="font-size:46px;">The LAAA Team.</h1>
+    <div class="cover-stats">
+      <div class="s">
+        <div class="v">Filip Niculete</div>
+        <div class="l" style="text-transform:none;letter-spacing:.02em;font-size:10px;color:rgba(255,255,255,.86);margin-top:6px;line-height:1.6;">
+          Senior Managing Director, Investments<br/>(818) 212-2748 · Filip.Niculete@marcusmillichap.com<br/>CA DRE #01905352</div>
+      </div>
+      <div class="s">
+        <div class="v">Glen Scher</div>
+        <div class="l" style="text-transform:none;letter-spacing:.02em;font-size:10px;color:rgba(255,255,255,.86);margin-top:6px;line-height:1.6;">
+          Senior Managing Director, Investments<br/>(818) 212-2808 · Glen.Scher@marcusmillichap.com<br/>CA DRE #01962976</div>
+      </div>
+    </div>
+  </div>
+  <div style="position:absolute;bottom:0.4in;left:0.7in;right:0.7in;display:flex;justify-content:space-between;font-size:8.5px;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,.6);z-index:3;">
+    <span>Marcus &amp; Millichap · 16830 Ventura Blvd, Suite 100, Encino, CA 91436</span>
+    <span>www.laaa.com</span>
+  </div>
+</section>
+
+</div>
+<script>
+  document.addEventListener('keydown',function(e){
+    var pages=[].slice.call(document.querySelectorAll('.page'));
+    var i=pages.findIndex(p=>p.getBoundingClientRect().top> -50);
+    if(e.key==='ArrowDown'||e.key==='PageDown'){if(pages[i+0])pages[Math.min(i+1,pages.length-1)].scrollIntoView({behavior:'smooth'});}
+    if(e.key==='ArrowUp'||e.key==='PageUp'){if(pages[i-1])pages[Math.max(i-1,0)].scrollIntoView({behavior:'smooth'});}
+  });
+</script>
+<style>
+  @media print{
+    @page{size:11in 8.5in;margin:0;}
+    html,body{background:#fff;}
+    .deck{gap:0;padding:0;}
+    .page{box-shadow:none;page-break-after:always;break-after:page;margin:0;}
+    .page:last-child{page-break-after:auto;}
+  }
+</style>
+</body>
+</html>
