@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Market Overview — OM Template</title>
+
+<!-- Brand fonts: Playfair Display (serif headings/figures) + Inter (sans labels/body) -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" />
+
+<style>
+/* ============================================================================
+   OFFERING MEMORANDUM · MARKET OVERVIEW (AREA & DEMAND DRIVERS) — REUSABLE PAGE
+   ----------------------------------------------------------------------------
+   • Page size matches the OM: US Letter, LANDSCAPE (11in x 8.5in).
+   • To reuse for a new deal: edit ONLY the OM = { ... } config block in the
+     <script> at the bottom of this file. No markup/CSS changes needed.
+   • Export to PDF: open in Chrome → Print → "Save as PDF" → Landscape,
+     paper "Letter", margins "None", background graphics ON.
+   ========================================================================== */
+
+:root {
+  /* Brand palette (sampled from the existing OM) */
+  --navy:        #0D2245;   /* primary text + headings              */
+  --navy-soft:   #233656;   /* secondary text                       */
+  --orange:      #E07B3A;   /* primary accent (rules, tags, marks)  */
+  --orange-deep: #C5641E;   /* accent, hover/print-safe variant     */
+  --green:       #1D6B44;   /* positive / highlighted metric        */
+  --ink-60:      #5B657A;   /* muted labels                         */
+  --ink-40:      #8A93A4;   /* eyebrows, footnotes                  */
+  --line:        #E4E7EC;   /* hairlines / card borders             */
+  --card:        #FBFBFC;   /* card fill                            */
+  --card-2:      #F6F8FA;   /* alt card fill                        */
+  --paper:       #FFFFFF;
+
+  --serif: "Playfair Display", Georgia, "Times New Roman", serif;
+  --sans:  "Inter", -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body { background: #6b7280; }
+body {
+  font-family: var(--sans);
+  color: var(--navy);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* ---- The page ----------------------------------------------------------- */
+.page {
+  position: relative;
+  width: 11in;
+  height: 8.5in;
+  margin: 24px auto;
+  padding: 0.46in 0.6in 0.5in;
+  background: var(--paper);
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 10px 40px rgba(0,0,0,.35);
+  overflow: hidden;
+}
+
+/* ---- Header ------------------------------------------------------------- */
+.head { display: flex; align-items: flex-end; justify-content: space-between; }
+.eyebrow {
+  font-size: 8.5px; font-weight: 700; letter-spacing: .28em; text-transform: uppercase;
+  color: var(--ink-40);
+}
+.title {
+  font-family: var(--serif); font-weight: 600; font-size: 26px; line-height: 1;
+  color: var(--navy); margin-top: 6px;
+}
+.locus {
+  font-size: 9px; font-weight: 700; letter-spacing: .22em; text-transform: uppercase;
+  color: var(--ink-40); padding-bottom: 4px;
+}
+.rule { height: 2px; background: var(--orange); margin-top: 9px; }
+
+/* ---- Lead statement ----------------------------------------------------- */
+.lead {
+  font-family: var(--serif); font-weight: 500; font-size: 17px; line-height: 1.34;
+  color: var(--navy); margin: 13px 0 11px; max-width: 96%;
+}
+.lead b { font-weight: 700; color: var(--orange-deep); }
+
+/* ---- Main two-column body ----------------------------------------------- */
+.body { display: grid; grid-template-columns: 1.18fr 1fr; gap: 26px; flex: 1; min-height: 0; }
+
+.kicker {
+  font-size: 8.5px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase;
+  color: var(--orange-deep); margin-bottom: 9px;
+}
+
+/* narrative */
+.narrative p {
+  font-size: 10px; line-height: 1.55; color: var(--navy-soft); margin-bottom: 8px;
+}
+.narrative p b { color: var(--navy); font-weight: 600; }
+
+/* demand-driver cards */
+.drivers { display: grid; grid-template-columns: 1fr 1fr; gap: 9px; margin-top: 13px; }
+.driver {
+  border: 1px solid var(--line); border-radius: 7px; background: var(--card);
+  padding: 9px 10px 10px; position: relative;
+}
+.driver::before {
+  content: ""; position: absolute; left: 0; top: 10px; bottom: 10px; width: 2.5px;
+  background: var(--orange); border-radius: 2px;
+}
+.driver h4 {
+  font-size: 8.5px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--navy); margin: 0 0 4px 6px;
+}
+.driver p { font-size: 9px; line-height: 1.45; color: var(--ink-60); margin-left: 6px; }
+
+/* ---- Points of interest (right column) ---------------------------------- */
+.poi { display: flex; flex-direction: column; height: 100%; }
+.poi-list { display: flex; flex-direction: column; gap: 0; }
+.poi-row {
+  display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 10px;
+  padding: 6.5px 0; border-bottom: 1px solid var(--line);
+}
+.poi-row:first-child { border-top: 1px solid var(--line); }
+.poi-name { font-size: 10px; font-weight: 600; color: var(--navy); line-height: 1.2; }
+.poi-sub  { font-size: 8px; color: var(--ink-40); margin-top: 2px; letter-spacing: .02em; }
+.poi-tag {
+  display: inline-block; font-size: 6.6px; font-weight: 700; letter-spacing: .1em;
+  text-transform: uppercase; color: var(--orange-deep);
+  background: rgba(224,123,58,.10); border-radius: 3px; padding: 1.5px 5px; margin-bottom: 3px;
+}
+.poi-dist {
+  font-family: var(--serif); font-weight: 600; font-size: 13px; color: var(--navy);
+  text-align: right; white-space: nowrap; line-height: 1;
+}
+.poi-dist span { display: block; font-family: var(--sans); font-size: 6.6px; font-weight: 600;
+  letter-spacing: .12em; text-transform: uppercase; color: var(--ink-40); margin-top: 2px; }
+
+/* ---- Stat strip --------------------------------------------------------- */
+.stats {
+  display: grid; grid-template-columns: repeat(6, 1fr); gap: 0;
+  border-top: 1px solid var(--line); margin-top: 12px; padding-top: 11px;
+}
+.stat { padding-right: 14px; }
+.stat .n { font-family: var(--serif); font-weight: 600; font-size: 21px; line-height: 1; color: var(--navy); }
+.stat.hl .n { color: var(--green); }
+.stat .l { font-size: 7.5px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--ink-60); margin-top: 5px; }
+.footnote { font-size: 7px; font-style: italic; color: var(--ink-40); margin-top: 8px; }
+
+/* ---- Footer ------------------------------------------------------------- */
+.foot {
+  display: flex; align-items: center; justify-content: space-between;
+  border-top: 1px solid var(--line); margin-top: 9px; padding-top: 7px;
+}
+.foot .brand { display: flex; align-items: center; gap: 7px; font-size: 9px; font-weight: 700;
+  letter-spacing: .12em; text-transform: uppercase; color: var(--navy); }
+.foot .brand .diamond { width: 8px; height: 8px; background: var(--orange); transform: rotate(45deg); }
+.foot .center { font-size: 7.5px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase;
+  color: var(--ink-40); }
+.foot .pageno { font-size: 10px; font-weight: 700; color: var(--navy); }
+
+/* ---- Print -------------------------------------------------------------- */
+@page { size: 11in 8.5in; margin: 0; }
+@media print {
+  html, body { background: #fff; }
+  .page { margin: 0; box-shadow: none; width: 11in; height: 8.5in; page-break-after: avoid; }
+  * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
+</style>
+</head>
+<body>
+  <div class="page">
+    <!-- HEADER -->
+    <header class="head">
+      <div>
+        <div class="eyebrow" id="eyebrow"></div>
+        <h1 class="title" id="title"></h1>
+      </div>
+      <div class="locus" id="locus"></div>
+    </header>
+    <div class="rule"></div>
+
+    <!-- LEAD STATEMENT -->
+    <p class="lead" id="lead"></p>
+
+    <!-- BODY: narrative + demand drivers (L) · points of interest (R) -->
+    <section class="body">
+      <div class="col-left">
+        <div class="kicker" id="narrativeKicker"></div>
+        <div class="narrative" id="narrative"></div>
+        <div class="kicker" id="driversKicker" style="margin-top:14px"></div>
+        <div class="drivers" id="drivers"></div>
+      </div>
+
+      <div class="col-right poi">
+        <div class="kicker" id="poiKicker"></div>
+        <div class="poi-list" id="poiList"></div>
+      </div>
+    </section>
+
+    <!-- STAT STRIP -->
+    <section class="stats" id="stats"></section>
+    <div class="footnote" id="footnote"></div>
+
+    <!-- FOOTER -->
+    <footer class="foot">
+      <div class="brand"><span class="diamond"></span><span id="footBrand"></span></div>
+      <div class="center" id="footCenter"></div>
+      <div class="pageno" id="footPage"></div>
+    </footer>
+  </div>
+
+<script>
+/* =============================================================================
+   CONFIG — EDIT THIS BLOCK ONLY TO REUSE FOR A NEW DEAL
+   ===========================================================================*/
+const OM = {
+  eyebrow: "09 · Location",
+  title:   "Market Overview",
+  locus:   "Boyle Heights · 90023",
+
+  // One- or two-sentence hook. Use <b> for the orange-highlighted phrase.
+  lead: "A supply-constrained, transit-served pocket of East Los Angeles — " +
+        "<b>minutes from Downtown and one of the nation's largest hospital and bioscience campuses.</b>",
+
+  narrativeKicker: "The Submarket",
+  narrative: [
+    "<b>Boyle Heights</b> sits directly across the Los Angeles River from Downtown — a dense, " +
+    "historically renter-occupied community with a low-rise vintage housing stock and minimal new supply. " +
+    "The result is a deep, durable tenant pool and persistently tight vacancy.",
+    "The location pairs that resilient residential demand with two of the region's largest job engines: the " +
+    "<b>LAC+USC / USC Health Sciences</b> medical and bioscience campus to the northwest, and the " +
+    "<b>City of Vernon</b> industrial district (~44,900 direct jobs) to the south — anchoring everyday " +
+    "rental demand independent of any single employer."
+  ],
+
+  driversKicker: "Demand Drivers",
+  drivers: [
+    { h: "Healthcare & Bioscience", p: "LAC+USC Medical Center and the adjacent USC Health Sciences Campus — a 24/7 employment anchor for nurses, residents, staff and students." },
+    { h: "Downtown LA Job Core",   p: "±3 miles to the DTLA employment base — a short hop west across the river for office, civic and creative workers." },
+    { h: "Rail + Freeway Access",  p: "Metro E Line (Soto / Indiana) links tenants car-free to DTLA; direct on-ramps to the I-5, I-10, SR-60 & US-101." },
+    { h: "Supply-Constrained",     p: "Low-rise historic fabric and minimal new construction keep the renter pool deep and vacancy structurally tight." }
+  ],
+
+  poiKicker: "Area Highlights · Points of Interest",
+  // distance values are APPROXIMATE drive distances — buyer to verify.
+  poi: [
+    { tag: "Healthcare", name: "LAC+USC Medical Center",          sub: "LA General — major regional hospital & employer", dist: "±2.5", unit: "mi" },
+    { tag: "Education",  name: "USC Health Sciences Campus",      sub: "Keck School of Medicine of USC",                   dist: "±2.5", unit: "mi" },
+    { tag: "Healthcare", name: "Adventist Health White Memorial", sub: "Full-service hospital · César Chávez Ave",         dist: "±2",   unit: "mi" },
+    { tag: "Transit",    name: "Metro E Line — Soto Station",     sub: "Light rail to DTLA & Santa Monica",                dist: "±1.5", unit: "mi" },
+    { tag: "Employment", name: "City of Vernon Industrial",       sub: "~44,900 direct jobs · logistics & mfg",            dist: "±1.5", unit: "mi" },
+    { tag: "Downtown",   name: "Downtown Los Angeles",            sub: "Office, civic & creative job core",                dist: "±3",   unit: "mi" },
+    { tag: "Culture",    name: "Mariachi Plaza",                  sub: "Cultural landmark & Metro station",                dist: "±2",   unit: "mi" },
+    { tag: "Freeway",    name: "East LA Interchange (5/10/60)",   sub: "Among the basin's most connected nodes",           dist: "±1",   unit: "mi" }
+  ],
+
+  stats: [
+    { n: "75%",      l: "Renter-Occupied", hl: true },
+    { n: "44,017",   l: "ZIP Population" },
+    { n: "33.1",     l: "Median Age" },
+    { n: "$59,669",  l: "Median HH Income" },
+    { n: "$1,538",   l: "Median Gross Rent" },
+    { n: "±12,500",  l: "Households" }
+  ],
+
+  footnote: "Points of interest reflect approximate drive distances and are provided for general orientation only. " +
+            "Demographics: U.S. Census Bureau / ACS estimates (ZIP 90023). All figures approximate and to be independently buyer-verified.",
+
+  footBrand:  "Marcus & Millichap · LAAA Team",
+  footCenter: "Siskiyou Street Apartments · Offering Memorandum",
+  footPage:   "15"
+};
+
+/* =============================================================================
+   RENDER — no need to edit below this line
+   ===========================================================================*/
+const $ = id => document.getElementById(id);
+const set = (id, html) => { const el = $(id); if (el) el.innerHTML = html; };
+
+set("eyebrow", OM.eyebrow);
+set("title", OM.title);
+set("locus", OM.locus);
+set("lead", OM.lead);
+
+set("narrativeKicker", OM.narrativeKicker);
+set("narrative", OM.narrative.map(p => `<p>${p}</p>`).join(""));
+
+set("driversKicker", OM.driversKicker);
+set("drivers", OM.drivers.map(d => `
+  <div class="driver"><h4>${d.h}</h4><p>${d.p}</p></div>`).join(""));
+
+set("poiKicker", OM.poiKicker);
+set("poiList", OM.poi.map(p => `
+  <div class="poi-row">
+    <div>
+      <span class="poi-tag">${p.tag}</span>
+      <div class="poi-name">${p.name}</div>
+      <div class="poi-sub">${p.sub}</div>
+    </div>
+    <div class="poi-dist">${p.dist}<span>${p.unit}</span></div>
+  </div>`).join(""));
+
+set("stats", OM.stats.map(s => `
+  <div class="stat ${s.hl ? "hl" : ""}"><div class="n">${s.n}</div><div class="l">${s.l}</div></div>`).join(""));
+
+set("footnote", OM.footnote);
+set("footBrand", OM.footBrand);
+set("footCenter", OM.footCenter);
+set("footPage", OM.footPage);
+</script>
+</body>
+</html>
